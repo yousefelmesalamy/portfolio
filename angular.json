@@ -5,7 +5,6 @@
   "projects": {
     "portfolio-website": {
       "projectType": "application",
-      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,8 +12,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "dist/portfolio/",
-            "outputPath": "docs/",
+            "outputPath": "dist/portfolio",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -34,6 +32,7 @@
           },
           "configurations": {
             "production": {
+              "outputPath": "dist/portfolio",
               "baseHref": "/portfolio/",
               "budgets": [
                 {
@@ -47,9 +46,16 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true,
+              "namedChunks": false,
+              "vendorChunk": false
             },
             "development": {
+              "outputPath": "dist/portfolio",
+              "baseHref": "/",
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -62,6 +68,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "portfolio-website:build"
+          },
           "configurations": {
             "production": {
               "browserTarget": "portfolio-website:build:production"
@@ -98,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

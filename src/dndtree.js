@@ -45,11 +45,20 @@ function createTree() {
                 , {
                     "name": "Frontend",
                     "children": [
-                        {"name": "Angular framework"},
-                        {"name": "PYQT"},
                         {"name": "Bootstrap"},
-                        {"name": "CSS"},
+                        {"name": "CSS , SCSS"},
                         {"name": "HTML"},
+                        {"name": "JWT"},
+                        {"name": "PYQT"},
+                        {
+                            "name": "Angular framework",
+                            "children": [
+                                {"name": "Angular framework"},
+                                {"name": "GSAP"},
+                                {"name": "Jquery"},
+        
+                            ]
+                        },
 
                     ]
                 },
@@ -75,6 +84,7 @@ function createTree() {
                         { "name": "GitHub"}
                     ]
                 }
+                
             ]
         };
 

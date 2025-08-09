@@ -1,23 +1,20 @@
 import { ChangeDetectorRef, Component, ElementRef, NgZone, OnInit } from '@angular/core';
 
 
-declare var createTree2: any;
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css'],
+  styleUrls: ['./projects.component.scss'],
 
 
 })
-export class ProjectsComponent implements OnInit{
+export class ProjectsComponent {
 
 
 
   constructor() { }
 
-  ngOnInit(): void {
-    new createTree2();
-  }
+
 
  
   
